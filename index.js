@@ -1,9 +1,9 @@
 function computerPlay() {
     //generate a randomnumber
-    let randomChoice = Math.floor(Math.random()*3);
+    let randomNum = Math.floor(Math.random()*3);
     let choice;
     //return rock/paper/scissors based on number generated
-    switch(randomChoice){
+    switch(randomNum){
         case 0:
             choice = "Rock";
             break;
@@ -47,14 +47,14 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-function game() {
-    let results = 0;
-    for (let i = 0; i < 5; i++) {
-        results += playRound(prompt("Will you choose rock. paper, or scissors?"), computerPlay());
-    }
-    if (results < 0) {
-        return "Turns out you can't beat a computer!";
-    }else {
-        return "You somehow won!";
-    }
-}
+// function game() {
+//     let results = 0;
+//     for (let i = 0; i < 5; i++) {
+//         results += playRound(prompt("Will you choose rock. paper, or scissors?"), computerPlay());
+//     }
+//     if (results < 0) {
+//         return "Turns out you can't beat a computer!";
+//     }else {
+//         return "You somehow won!";
+//     }
+// }
