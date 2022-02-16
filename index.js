@@ -58,3 +58,14 @@ function playRound(playerSelection, computerSelection){
 //         return "You somehow won!";
 //     }
 // }
+let humanWins = 0;
+let computerWins = 0;
+const humanChoices = document.querySelectorAll('.human-choice-box');
+humanChoices.forEach(function (choice) {
+    choice.addEventListener("click", function(e) { 
+        console.log(choice.dataset.choice);
+        console.log(playRound(choice.dataset.choice, computerPlay()));
+    })
+});
+
+//create function that plays round and the result will modify scoreboard depending on who wins (this will be passed into the eventListener above as a CB function)

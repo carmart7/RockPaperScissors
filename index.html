@@ -11,19 +11,22 @@
 <body>
     <div class="choice-home">
         <h1>Rock, Paper, Scissors!</h1>
-
-        <div class="choice-container human">
+        <div class="human-choice-container human">
             <p>Human</p>
-            <button class="choice-box rock"></button>
-            <button class="choice-box paper"></button>
-            <button class="choice-box scissors"></button>
+            <button data-choice="rock" class="human-choice-box rock"></button>
+            <button data-choice="paper" class="human-choice-box paper"></button>
+            <button data-choice="scissors" class="human-choice-box scissors"></button>
         </div>
-
-        <div class="choice-container computer">
+        <div class="scoreboard">
+            <span class='humanScore'>0</span>
+            -
+            <span class="computerScore">0</span>
+        </div>
+        <div class="computer-choice-container computer">
             <p>Computer</p>
-            <button class="choice-box rock"></button>
-            <button class="choice-box paper"></button>
-            <button class="choice-box scissors"></button>
+            <button class="computer-choice-box rock"></button>
+            <button class="computer-choice-box paper"></button>
+            <button class="computer-choice-box scissors"></button>
         </div>
     </div>
     
