@@ -58,14 +58,38 @@ function playRound(playerSelection, computerSelection){
 //         return "You somehow won!";
 //     }
 // }
-let humanWins = 0;
+let currentHumanScore = 0;
+let currentComputerScore = 0;
+
+const humanScoreElement = document.querySelector('.humanScore');
+const computerScoreElement = document.querySelector('.computerScore');
+humanScoreElement.textContent = currentHumanScore;
+computerScoreElement.textContent = currentComputerScore;
+
 let computerWins = 0;
 const humanChoices = document.querySelectorAll('.human-choice-box');
-humanChoices.forEach(function (choice) {
-    choice.addEventListener("click", function(e) { 
-        console.log(choice.dataset.choice);
-        console.log(playRound(choice.dataset.choice, computerPlay()));
+humanChoices.forEach(function (humanChoice) {
+    humanChoice.addEventListener("click", function(e) {
+        let computerChoice = computerPlay();
+        let result = playRound(humanChoice.dataset.choice, computerChoice);
+
+        if(currentComputerScore == 5 || currentHumanScore == 5) {
+            return;
+        }
+
+        if (result == 1) {
+            currentHumanScore += 1;
+            humanScoreElement.textContent = currentHumanScore;
+        } else if (result == -1) {
+            currentComputerScore += 1;
+            computerScoreElement.textContent = currentComputerScore;
+        }
+
+        if (currentHumanScore == 5) {
+            document.querySelector('.human p').textContent = "WINNER | Human | WINNER";
+        } else if (currentComputerScore == 5) {
+            document.querySelector('.human p').textContent = "WINNER | Human | WINNER";
+        }
     })
 });
 
-//create function that plays round and the result will modify scoreboard depending on who wins (this will be passed into the eventListener above as a CB function)
